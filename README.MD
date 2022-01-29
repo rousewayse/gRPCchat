@@ -10,4 +10,4 @@
 ## Демонстрация
 ![image info](./imgs/lit-0.png)
 ![image info](./imgs/lit-1.png)
-![image info](./imgs/let-2.png)
+![image info](./imgs/lit-2.png)
