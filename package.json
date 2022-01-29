@@ -6,6 +6,7 @@
   "main": "src/index.js",
   "scripts": {
     "start": "electron-forge start",
+    "test": "jest",
     "package": "electron-forge package",
     "make": "electron-forge make",
     "publish": "electron-forge publish",
@@ -56,6 +57,7 @@
     "@electron-forge/maker-rpm": "^6.0.0-beta.63",
     "@electron-forge/maker-squirrel": "^6.0.0-beta.63",
     "@electron-forge/maker-zip": "^6.0.0-beta.63",
-    "electron": "16.0.8"
+    "electron": "16.0.8",
+    "jest": "^27.4.7"
   }
 }

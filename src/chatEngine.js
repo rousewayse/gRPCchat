@@ -13,8 +13,11 @@ const proto = grpc.loadPackageDefinition(
 );
 
 //get client instance
-function getChat({username, ip, port, onData}) {
+function getChat({username, ip, port, onData = console.log}) {
   //console.log('chat ending join', ip, port);
+  if (!username) throw Error('No username');
+  if (!ip) throw Error('No IP');
+  if (!port) throw Error('No port');
   const client = new proto.chat.Chat(`${ip}:${port}`, grpc.credentials.createInsecure());
   const channel = client.join({ user: username });
   channel.on('data', onData);
@@ -23,8 +26,11 @@ function getChat({username, ip, port, onData}) {
 }
 
 //start server
-function startServer({username, ip, port, log = console.log/*, join, send*/}) {
+function startServer({username, ip, port, log = console.log} = {}) {
   const users = [];
+  if (!username) throw Error('No username');
+  if (!ip) throw Error('No IP');
+  if (!port) throw Error('No port');
   function join(call, callback) {
     users.push(call);
     notifyChat({ user: 'server', text: 'new user joined', date: new Date(Date.now()).toISOString() });
