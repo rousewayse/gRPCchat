@@ -1,0 +1,14 @@
+syntax = "proto3"; //Specify proto3 version.
+
+package chat; 
+
+service Chat {
+    rpc join(stream Message) returns (stream Message){}
+    rpc send(Message) returns (Message){}
+}
+
+message Message {
+    string user = 1;
+    string text = 2;
+    string date = 3;
+}

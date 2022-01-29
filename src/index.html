@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='UTF-8' />
+    <title>gRPC chat</title>
+    <link rel='stylesheet' type='text/css' href='../node_modules/bootstrap/dist/css/bootstrap.min.css'>
+    <link rel='stylesheet' href='index.css'/>
+    <script>require('bootstrap');</script>
+  </head>
+  <body>
+    <div class='container'>
+      <div class='row wrapper'>
+        <div class='input col-4'>
+          <div class='input-group mb-3 column'>
+            <div class='input-group-prepend'>
+              <span class='input-group-text' id='basic-addon1'>@</span>
+            </div>
+            <input type='text' class='form-control' id='username' placeholder='username (required)' aria-label='Username' aria-describedby='basic-addon1'>
+          </div>
+          <div class='input-group mb-3 column'>
+            <div class='input-group-prepend'>
+              <span class='input-group-text' id='basic-addon1'>@</span>
+            </div>
+            <input type='text' class='form-control' id='port' placeholder='port (optional)' aria-label='Port' aria-describedby='basic-addon1'>
+          </div>
+          <div class='input-group mb-3 column'>
+            <div class='input-group-prepend'>
+              <span class='input-group-text' id='basic-addon1'>@</span>
+            </div>
+            <input type='text' class='form-control' id='ip' placeholder='server IP (optional)' aria-label='IP' aria-describedby='basic-addon1'>
+          </div>
+          <button type='button' class='btn btn-dark' id='start'>start</button>
+        </div>
+        <div class='data col-8 column'>
+          <header class='lock' id='lock'>
+            <img src='https://img.icons8.com/material-two-tone/50/000000/lock-2.png'/>
+            <div>Fill the form to start</div>
+          </header>
+          <div class='chat' style='display: none;' id='chat'>
+            <h2 id='chatHeader'></h2>
+            <div class='input-group mb-3 column'>
+              <div class='input-group-prepend'>
+                <span class='input-group-text' id='basic-addon1'>Join chat<span>
+              </div>
+              <input type='text' class='form-control' id='joinChat' placeholder='IP:port' aria-label='Join Chat' aria-describedby='basic-addon1'>
+              <button type='button' class='btn btn-dark' id='join'>JOIN</button>
+            </div>
+            <div id='chatWindow' class='chatWindow'></div>
+            <div class='input-group mb-3 column'>
+              <div class='input-group-prepend'>
+                <span class='input-group-text' id='basic-addon1'>Send message<span>
+              </div>
+              <input type='text' class='form-control' id='messageInput' placeholder='Your message...' aria-label='Send message' aria-describedby='basic-addon1'>
+              <button type='button' class='btn btn-dark' id='send'>SEND</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src='./renderer.js'></script>
+</html>
